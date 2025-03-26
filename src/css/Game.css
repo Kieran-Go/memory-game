@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Press Start';
+    src: url('../assets/fonts/PressStart2P-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .game-grid{
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -7,12 +14,85 @@
     justify-content: center;
     margin: auto;
     text-align: center;
+    font-size: 0.5em;
+    border: black solid 1px;
+    margin-bottom: 20px;
+    padding: 0;
+    border-radius: 10px;
+    background-color: rgb(2, 2, 253, 0.5);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    will-change: transform;
+    transition: transform 0.3s ease-in-out;
 }
 .pokemon-container:hover{
     cursor: pointer;
+    transform: scale(1.2);
+    box-shadow: 0px 0px 15px rgba(255, 255, 0, 0.8);
 }
 
 .pokemon-container img{
     width: 110px;
-    background-color: rgb(2, 2, 253, 0.5);
+}
+
+.game-over-msg{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+}
+
+button{
+    background-color: rgb(1, 111, 246);
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    will-change: transform;
+    transition: transform 0.2s ease-in-out;
+}
+button:hover{
+    cursor: pointer;
+    background-color: blue;
+    box-shadow: 0px 0px 15px rgba(255, 255, 0, 0.8);
+    transform: scale(1.05);
+}
+
+.loading-msg{
+    text-align: center;
+    margin: auto;
+    width: fit-content;
+    background-color: rgb(0, 0, 255, 0.5);
+    padding: 10px;
+    border-radius: 30px;
+    border: solid black 2px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pokemon-container, .loading-msg, .game-over-msg, button{
+    font-family: 'Press Start';
+    color: white;
+    text-shadow: 
+        -1.5px  -1.5px  0 black,  
+        1.5px  -1.5px  0 black,
+        -1.5px   1.5px  0 black,
+        1.5px   1.5px  0 black;
+}
+
+@media (max-width: 1200px) {
+    .game-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .game-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

@@ -1,0 +1,10 @@
+body {
+    background: linear-gradient(to bottom right,  #c1c779, #0069b9);
+    height: 100vh;
+}
+
+@media (max-width: 1200px) {
+    body {
+        height: 100%;
+    }
+}
